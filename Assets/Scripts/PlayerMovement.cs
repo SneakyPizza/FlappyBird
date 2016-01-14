@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
-
-	private float _movementSpeed = 5;
+	
 	private Rigidbody2D _rigid;
 	// Use this for initialization
 	void Start () {
