@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class GameController : MonoBehaviour {
+    public delegate void NormalDelegate();
+    public event NormalDelegate LoseEvent;
+
     public GameObject tubeContainer;
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,10 @@ public class GameController : MonoBehaviour {
 	private void LoseGame()
     {
         //TODO: reset score
+
+        if (LoseEvent != null)
+            LoseEvent();
+
         Transform[] childTransforms = tubeContainer.GetComponentsInChildren<Transform>();
         foreach(Transform childTransform in childTransforms)
         {
